@@ -80,3 +80,12 @@ Este documento recopila los comandos que voy ejecutando en Debian 13, junto con 
 - `ip a`: Muestra la dirección IP de la VM.
 - `ssh usuario@IP_VM`: Conecta desde el host a la VM vía SSH.
 
+## 18. Instalación manual de Docker Compose v2
+
+- Problema: `docker compose` no funcionaba porque el plugin no estaba disponible en Ubuntu 22.04.
+- Solución: instalar Docker Compose v2 manualmente desde GitHub.
+- Comandos:
+  - `sudo curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose`
+  - `sudo chmod +x /usr/local/bin/docker-compose`
+- Verificación: `docker-compose --version`
+- Uso: `sudo docker-compose up -d` levanta los servicios definidos en `docker-compose.yml`.
