@@ -61,3 +61,22 @@ Este documento recopila los comandos que voy ejecutando en Debian 13, junto con 
 - `git push -u origin master`  
   Sube los cambios al repositorio remoto.  
   *(En algunos casos la rama principal se llama `main` en lugar de `master`.)*
+
+## 6. Instalación de KVM y Virt-Manager
+
+- `sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y`  
+  Instala el motor de virtualización y herramientas de gestión.
+
+- `sudo usermod -aG libvirt $(whoami)`  
+  Agrega el usuario al grupo libvirt para administrar VMs sin sudo.
+
+- Distribución elegida para Zabbix: **Ubuntu Server Minimal 22.04**  
+  Ligera, estable y con soporte oficial de Zabbix.
+
+## 8. Conexión SSH entre host y VM
+
+- `sudo apt install openssh-server -y`: Instala el servidor SSH en la VM.
+- `systemctl enable ssh && systemctl start ssh`: Habilita y arranca el servicio SSH.
+- `ip a`: Muestra la dirección IP de la VM.
+- `ssh usuario@IP_VM`: Conecta desde el host a la VM vía SSH.
+
